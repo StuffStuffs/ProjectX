@@ -346,7 +346,7 @@ local gPlayers = game:GetService("Players")
     services.events = {}
     local user = gPlayers.LocalPlayer
     
-    local cmdprefix    = ''
+    local cmdprefix    = '#'
     local scriptprefix = '/'
     local split        = " "
     
@@ -766,3 +766,5 @@ local GetCharacterChildren = Character:GetDescendants()
     end
   end
 end)
+
+N('Loaded! Prefix is #', 10)
