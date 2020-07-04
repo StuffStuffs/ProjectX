@@ -1,0 +1,768 @@
+if _G.CustomSprint then
+   Sprintspeed = _G.CustomSprintValue
+end
+
+if _G.CustomWS then
+    DefaultSpeed = _G.CustomWSValue
+end
+
+function GetCommands()
+ if game.CoreGui:FindFirstChild("Commands") then
+      game.CoreGui["Commands"]:Destroy()
+ else
+local Commands = Instance.new("ScreenGui")
+local ScrollingFrame = Instance.new("ScrollingFrame")
+local Title = Instance.new("TextLabel")
+local Command1 = Instance.new("TextLabel")
+local Command2 = Instance.new("TextLabel")
+local Command3 = Instance.new("TextLabel")
+local Command4 = Instance.new("TextLabel")
+local Command5 = Instance.new("TextLabel")
+local Command6 = Instance.new("TextLabel")
+local Command7 = Instance.new("TextLabel")
+local Command8 = Instance.new("TextLabel")
+local Command9 = Instance.new("TextLabel")
+
+Commands.Name = "Commands"
+Commands.Parent = game.CoreGui
+
+ScrollingFrame.Parent = Commands
+ScrollingFrame.Active = true
+ScrollingFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+ScrollingFrame.BorderColor3 = Color3.fromRGB(0, 85, 0)
+ScrollingFrame.BorderSizePixel = 2
+ScrollingFrame.Position = UDim2.new(0.420524687, 0, 0.146412879, 0)
+ScrollingFrame.Size = UDim2.new(0, 412, 0, 489)
+ScrollingFrame.ScrollBarThickness = 7
+
+Title.Name = "Title"
+Title.Parent = ScrollingFrame
+Title.BackgroundColor3 = Color3.fromRGB(0, 85, 0)
+Title.BorderColor3 = Color3.fromRGB(0, 85, 0)
+Title.BorderSizePixel = 2
+Title.Size = UDim2.new(0, 412, 0, 50)
+Title.Font = Enum.Font.SourceSansLight
+Title.Text = "Command List"
+Title.TextColor3 = Color3.fromRGB(0, 0, 0)
+Title.TextScaled = true
+Title.TextSize = 14.000
+Title.TextWrapped = true
+
+Command1.Name = "Command[1]"
+Command1.Parent = ScrollingFrame
+Command1.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Command1.BorderColor3 = Color3.fromRGB(0, 85, 0)
+Command1.BorderSizePixel = 2
+Command1.Position = UDim2.new(0, 0, 0.0363636911, 0)
+Command1.Size = UDim2.new(0, 402, 0, 50)
+Command1.Font = Enum.Font.SciFi
+Command1.Text = "Aim (Player) - Selects a player to aimlock { Can also be with no arguments to disable and enable aimlock }"
+Command1.TextColor3 = Color3.fromRGB(0, 85, 0)
+Command1.TextScaled = true
+Command1.TextSize = 14.000
+Command1.TextWrapped = true
+
+Command2.Name = "Command[2]"
+Command2.Parent = ScrollingFrame
+Command2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Command2.BorderColor3 = Color3.fromRGB(0, 85, 0)
+Command2.BorderSizePixel = 2
+Command2.Position = UDim2.new(0, 0, 0.0729669109, 0)
+Command2.Size = UDim2.new(0, 402, 0, 50)
+Command2.Font = Enum.Font.SciFi
+Command2.Text = "Unaim - Disables and enables aimlock, the backup command for disabling aimlock."
+Command2.TextColor3 = Color3.fromRGB(0, 85, 0)
+Command2.TextScaled = true
+Command2.TextSize = 14.000
+Command2.TextWrapped = true
+
+Command3.Name = "Command[3]"
+Command3.Parent = ScrollingFrame
+Command3.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Command3.BorderColor3 = Color3.fromRGB(0, 85, 0)
+Command3.BorderSizePixel = 2
+Command3.Position = UDim2.new(0, 0, 0.109570131, 0)
+Command3.Size = UDim2.new(0, 402, 0, 50)
+Command3.Font = Enum.Font.SciFi
+Command3.Text = "Sprintspeed (amount) - sets the speed for when you sprint! { Saves on respawn }"
+Command3.TextColor3 = Color3.fromRGB(0, 85, 0)
+Command3.TextScaled = true
+Command3.TextSize = 14.000
+Command3.TextWrapped = true
+
+Command4.Name = "Command[4]"
+Command4.Parent = ScrollingFrame
+Command4.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Command4.BorderColor3 = Color3.fromRGB(0, 85, 0)
+Command4.BorderSizePixel = 2
+Command4.Position = UDim2.new(0, 0, 0.146173358, 0)
+Command4.Size = UDim2.new(0, 402, 0, 50)
+Command4.Font = Enum.Font.SciFi
+Command4.Text = "Ws (amount) - sets your default walkspeed { Saves on respawn and after sprint speed }"
+Command4.TextColor3 = Color3.fromRGB(0, 85, 0)
+Command4.TextScaled = true
+Command4.TextSize = 14.000
+Command4.TextWrapped = true
+
+Command5.Name = "Command[5]"
+Command5.Parent = ScrollingFrame
+Command5.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Command5.BorderColor3 = Color3.fromRGB(0, 85, 0)
+Command5.BorderSizePixel = 2
+Command5.Position = UDim2.new(0, 0, 0.18277657, 0)
+Command5.Size = UDim2.new(0, 402, 0, 50)
+Command5.Font = Enum.Font.SciFi
+Command5.Text = "To (Type) (Name) - Optional Argument One \"Place\" and place name, to Teleport to a player say \"To (player)\" to teleport to a place say \"Place\" \"Name\""
+Command5.TextColor3 = Color3.fromRGB(0, 85, 0)
+Command5.TextScaled = true
+Command5.TextSize = 14.000
+Command5.TextWrapped = true
+
+Command6.Name = "Command[6]"
+Command6.Parent = ScrollingFrame
+Command6.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Command6.BorderColor3 = Color3.fromRGB(0, 85, 0)
+Command6.BorderSizePixel = 2
+Command6.Position = UDim2.new(0, 0, 0.219379783, 0)
+Command6.Size = UDim2.new(0, 402, 0, 50)
+Command6.Font = Enum.Font.SciFi
+Command6.Text = "Fov (Amount) - Sets your FieldOfView (FOV) to specific amount (120 max)"
+Command6.TextColor3 = Color3.fromRGB(0, 85, 0)
+Command6.TextScaled = true
+Command6.TextSize = 14.000
+Command6.TextWrapped = true
+
+Command7.Name = "Command[7]"
+Command7.Parent = ScrollingFrame
+Command7.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Command7.BorderColor3 = Color3.fromRGB(0, 85, 0)
+Command7.BorderSizePixel = 2
+Command7.Position = UDim2.new(0, 0, 0.255982995, 0)
+Command7.Size = UDim2.new(0, 402, 0, 50)
+Command7.Font = Enum.Font.SciFi
+Command7.Text = "Rejoin - Rejoins the current server, no arguments are needed for this command"
+Command7.TextColor3 = Color3.fromRGB(0, 85, 0)
+Command7.TextScaled = true
+Command7.TextSize = 14.000
+Command7.TextWrapped = true
+
+Command8.Name = "Command[8]"
+Command8.Parent = ScrollingFrame
+Command8.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Command8.BorderColor3 = Color3.fromRGB(0, 85, 0)
+Command8.BorderSizePixel = 2
+Command8.Position = UDim2.new(0, 0, 0.292586207, 0)
+Command8.Size = UDim2.new(0, 402, 0, 50)
+Command8.Font = Enum.Font.SciFi
+Command8.Text = "Noclip - toggles noclip on / off"
+Command8.TextColor3 = Color3.fromRGB(0, 85, 0)
+Command8.TextScaled = true
+Command8.TextSize = 14.000
+Command8.TextWrapped = true
+
+Command9.Name = "Command[9]"
+Command9.Parent = ScrollingFrame
+Command9.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Command9.BorderColor3 = Color3.fromRGB(0, 85, 0)
+Command9.BorderSizePixel = 2
+Command9.Position = UDim2.new(0, 0, 0.32918942, 0)
+Command9.Size = UDim2.new(0, 402, 0, 50)
+Command9.Font = Enum.Font.SciFi
+Command9.Text = "Clip - Only toggles noclip off"
+Command9.TextColor3 = Color3.fromRGB(0, 85, 0)
+Command9.TextScaled = true
+Command9.TextSize = 14.000
+Command9.TextWrapped = true
+end
+end
+
+local Logo = Instance.new("ScreenGui")
+local Ok = Instance.new("ImageLabel")
+
+Logo.Name = "Logo"
+Logo.Parent = game.CoreGui
+
+Ok.Name = "Ok"
+Ok.Parent = Logo
+Ok.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Ok.BackgroundTransparency = 1.000
+Ok.Position = UDim2.new(0.382376522, 0, 0, 0)
+Ok.Size = UDim2.new(0, 527, 0, 100)
+Ok.Image = "rbxassetid://%35%32%38%36%31%36%30%32%32%30"
+
+getgenv().Character = function() 
+    return 
+  game.Players.LocalPlayer.Character or game.Players.LocalPlayer.CharacterAdded:Wait()
+end
+
+getgenv().N = function(Text,Time)
+    game:GetService("StarterGui"):SetCore("SendNotification",{
+                Title = "Project X",
+                Text = Text,
+                Icon = "rbxassetid://5286197104",
+                Duration = Time
+                
+  })
+end
+
+function DisableAimlocks()
+ for _, Player in pairs(game.Players:GetPlayers()) do
+    if Player:FindFirstChild("Aimlocked") then
+     Player.Value = false
+    end
+end
+end
+
+function DestroyAimlocks()
+     for _, Player in pairs(game.Players:GetPlayers()) do
+    if Player:FindFirstChild("Aimlocked") then
+     Player:Destroy()
+    end
+end
+end
+
+function EnableAllAimlocks()
+ for _, Player in pairs(game.Players:GetPlayers()) do
+    if Player:FindFirstChild("Aimlocked") then
+     Player.Value = true
+    end
+end
+end
+
+RunService = game:GetService("RunService").RenderStepped
+RunWait = game:GetService("RunService").Stepped
+Noclip = false
+Aimlocking = false
+Aimlocked = nil
+
+local BypassValues = {"WalkSpeed", "JumpPower", "HipHeight", "Health", "CFrame"}
+local BadMethods = {"Destroy", "Kick", "BreakJoints"}
+local RemoteMethods = {"FireServer"}
+local Vars = {"Fire"}
+local Vel = 5
+
+
+-- [[ Game Bypass ]] 
+
+local Meta = getrawmetatable(game)
+local CheckExploit = checkcaller or is_protosmasher_caller
+local NC = Meta.__namecall
+local NI = Meta.__newindex
+setreadonly(Meta,false)
+
+Meta.__newindex = newcclosure(function(Own, PropertyType, GetValue)
+ if CheckExploit() then 
+   return NI(Own, PropertyType, GetValue)
+ end
+
+ game:GetService("StarterGui"):SetCore('ResetButtonCallback', true)
+ 
+if PropertyType == BypassValues[1] and not noslow then
+      return 16
+end
+if PropertyType == BypassValues[2] then
+      return 37.5
+end
+if PropertyType == BypassValues[3] then
+      return 0
+end
+if PropertyType == BypassValues[4] then
+      return 100
+end
+if PropertyType == BypassValues[5] and Own:IsDescendantOf(game.Players.LocalPlayer.Character) then
+  return
+end
+  return NI(Own, PropertyType, GetValue)
+end)
+
+Meta.__namecall = newcclosure(function(Own,...)
+ local PassedArguments = {...}
+ local Method = getnamecallmethod or get_namecall_method
+ 
+if Method() == BadMethods[1] or Method() == BadMethods[2] then
+    if Own == game.Players.LocalPlayer then
+        return wait(9e9)
+    end
+   if tostring(Own) == "BodyGyro" or tostring(Own) == "BodyVelocity" then
+     return wait(9e9)
+   end
+end
+
+if Method() == BadMethods[3] and Own == game.Players.LocalPlayer.Character then
+  return wait(9e9)
+end
+
+if Method() == RemoteMethods[1] then
+  if tostring(Own) == "Fire" and Aimlocking and Aimlocked then
+   local GetTarget = Aimlocked.FindFirstChild(Aimlocked, "HumanoidRootPart")
+    if GetTarget then
+         warn(Aimlocked.Name)
+      return NC(Own, GetTarget.CFrame + GetTarget.Velocity / Vel)
+    end
+  end
+end
+
+if tostring(Own) == "Input" and Aimlocking and Aimlocked then
+    if typeof(PassedArguments[2]) == "table" then
+  local GetTarget = Aimlocked.FindFirstChild(Aimlocked, "HumanoidRootPart")
+      if GetTarget then
+          local Args = PassedArguments
+        Args[2].mousehit = GetTarget.CFrame + GetTarget.Velocity / Vel
+        return NC(Own,unpack(PassedArguments))
+    end
+  end
+end
+
+if tostring(Own.Parent) == "ReplicatedStorage" or PassedArguments[1] == "hey" and not tostring(Own) == "SayMessageRequest" then
+  return wait(9e9)
+end
+  return NC(Own, ...)
+end)
+
+local gPlayers = game:GetService("Players")
+    local admin = gPlayers.LocalPlayer.Name
+    local bannedplyrs = {'PeopleYouHate','MorePeopleYouHate'}
+    
+    local admins = {'Friend, Friend'}
+    
+    local services={}
+    local cmds={}
+    local std={}
+    
+    local serverLocked = false
+    
+    function FIX_LIGHTING()
+    game.Lighting.Ambient = Color3.new(0.5, 0.5, 0.5)
+    game.Lighting.Brightness = 1
+    game.Lighting.GlobalShadows = true
+    game.Lighting.Outlines = false
+    game.Lighting.TimeOfDay = 14
+    game.Lighting.FogEnd = 100000
+    end
+    
+    services.players=gPlayers
+    services.lighting=game:GetService('Lighting')
+    services.workspace=game:GetService('Workspace')
+    services.events = {}
+    local user = gPlayers.LocalPlayer
+    
+    local cmdprefix    = ''
+    local scriptprefix = '/'
+    local split        = " "
+    
+    
+    updateevents=function()
+    for i,v in pairs(services.events) do services.events:remove(i) v:disconnect() end
+    for i,v in pairs(gPlayers:players())do
+    local ev = v.Chatted:connect(function(msg) do_exec(msg,v) end)
+    services.events[#services.events+1] = ev
+    end
+    end
+    
+    std.inTable=function(tbl,val)
+    if tbl==nil then return false end
+    
+    for _,v in pairs(tbl)do
+    if v==val then return true end
+    end 
+    return false
+    end
+    
+    std.out=function(str)
+    print(str)
+    end
+    
+    std.list=function(tbl) --turns table into list with commas
+    local str=''
+    for i,v in pairs(tbl)do
+    str=str..tostring(v)
+    if i~=#tbl then str=str..', ' end
+    end 
+    return str
+    end
+    
+    std.endat=function(str,val)
+    local z=str:find(val)
+    if z then 
+    return str:sub(0,z-string.len(val)),true
+    else 
+    return str,false 
+    end
+    end
+    
+    std.first=function(str) return str:sub(1,1) end
+    
+    isAdmin=function(name)
+    if name==admin then
+    return true
+    elseif admins[name]==true then
+    return true
+    end
+    return false
+    end
+    
+    local exec=function(str)
+    spawn(function()
+    local script, loaderr = loadstring(str)
+    if not script then
+    error(loaderr)
+    else
+    script()
+    end
+    end)
+    end
+    
+    local findCmd=function(cmd_name)
+    for i,v in pairs(cmds)do
+    if v.NAME:lower()==cmd_name:lower() or std.inTable(v.ALIAS,cmd_name:lower())then
+    return v
+    end
+    end
+    end
+    
+    local getCmd=function(msg)
+    local cmd,hassplit=std.endat(msg:lower(),split)
+    if hassplit then 
+    return {cmd,true} 
+    else 
+    return {cmd,false}
+    end
+    end
+    
+    local getprfx=function(strn)
+    if strn:sub(1,string.len(cmdprefix))==cmdprefix then return{'cmd',string.len(cmdprefix)+1}
+    elseif strn:sub(1,string.len(scriptprefix))==scriptprefix then return{'exec',string.len(scriptprefix)+1}
+    end return
+    end
+    
+    local getArgs=function(str)
+    local args={}
+    local new_arg=nil
+    local hassplit=nil
+    local s=str
+    repeat
+    new_arg,hassplit=std.endat(s:lower(),split)
+    if new_arg~='' then
+    args[#args+1]=new_arg
+    s=s:sub(string.len(new_arg)+string.len(split)+1)
+    end
+    until hassplit==false
+    return args
+    end
+    
+    local function execCmd(str, plr)
+    local s_cmd
+    local a
+    local cmd
+    s_cmd = getCmd(str) --separate command from string using split {command name,arg bool (for arg system)}
+    cmd = findCmd(s_cmd[1]) --get command object {NAME,DESC,{ALIASES},function(args)}
+    if cmd == nil then return end
+    a = str:sub(string.len(s_cmd[1]) + string.len(split) + 1)
+    local args=getArgs(a)--gets us a nice table of arguments
+    
+    pcall(function()
+    cmd.FUNC(args, plr)
+    end)
+    end
+    
+    function do_exec(str,plr)
+    if not isAdmin(plr.Name)then return end 
+    
+    str=str:gsub('/e ','')--remove "/e " the easy way!
+    
+    local t=getprfx(str)
+    if t==nil then return end
+    str=str:sub(t[2])
+    if t[1]=='exec' then
+    exec(str)
+    elseif t[1]=='cmd' then
+    execCmd(str, plr)
+    end
+    end
+    
+    updateevents()
+    _G.exec_cmd = execCmd
+    --game.Players.LocalPlayer.Chatted:connect(doexec)
+    
+    local _char=function(plr_name)
+    for i,v in pairs(game.Players:GetChildren())do
+    if v:IsA'Player'then
+    if v.Name==plr_name then return v.Character end
+    end
+    end
+    return
+    end
+    
+    local _plr=function(plr_name)
+    for i,v in pairs(game.Players:GetChildren())do
+    if v:IsA'Player'then
+    if v.Name==plr_name then return v end
+    end
+    end
+    return
+    end
+    
+    function addcmd(name,desc,alias,func)
+    cmds[#cmds+1]=
+    {
+    NAME=name;
+    DESC=desc;
+    ALIAS=alias;
+    FUNC=func;
+    }
+    end
+    
+    local function getPlayer(name)
+    local nameTable = {}
+    name=name:lower()
+    if name == "me" then
+    return {admin}
+    elseif name == "others" then
+    for i,v in pairs(gPlayers:GetChildren()) do
+    if v:IsA'Player'then
+    if v.Name~=admin then
+    nameTable[#nameTable+1]=v.Name
+    end
+    end
+    end
+    elseif name == "all" then
+    for i,v in pairs(gPlayers:GetChildren()) do
+    if v:IsA'Player'then 
+    nameTable[#nameTable+1]=v.Name
+    end
+    end
+    else
+    for i,v in pairs(gPlayers:GetChildren()) do
+    local lname = v.Name:lower()
+    local i,j = lname:find(name)
+    if i == 1 then
+    return {v.Name}
+    end
+    end
+    end
+    return nameTable
+    end
+    
+    -- commands --
+
+addcmd('Aim', 'Aimlocks a player', {"Aimlock"},
+ function(args)
+  if args[1] then
+  local FindPlayer = getPlayer(args[1])
+   for _, Player in pairs(FindPlayer) do
+      if not Player.Name then
+    Aimlocked = gPlayers[Player].Character
+    Aimlocking = true
+    DestroyAimlocks()
+    if gPlayers[Player]:FindFirstChild("Aimlocked") then
+        gPlayers[Player]["Aimlocked"]:Destroy()
+    end
+    local t = Instance.new("BoolValue")
+    t.Name = "Aimlocked"
+    t.Parent = gPlayers[Player]
+    t.Value = true
+     N('Aimlocking: '..gPlayers[Player].Name, 3)
+     gPlayers[Player].CharacterAdded:Connect(function(C)
+        if gPlayers[C.Name]:FindFirstChild("Aimlocked").Value == true then
+         Aimlocked = C
+        end
+     end)
+   end 
+ end
+    else
+      if Aimlocking then
+        Aimlocking = not Aimlocking
+        N('Aimlock: false', 3)
+        DisableAimlocks()
+       else
+      if not Aimlocking then
+          Aimlocking = true
+          N('Aimlock: true', 3)
+          EnableAllAimlocks()
+       end
+     end
+   end
+end)
+
+addcmd('Unaim', 'Turns off aimlock', {"Unaimlock"},
+ function(args)
+   if Aimlocking then
+   Aimlocking = not Aimlocking
+   N('Aimlock: false', 3)
+   DisableAimlocks()
+   else
+   if not Aimlocking then
+   Aimlocking = true
+   N('Aimlock: true', 3)
+   EnableAllAimlocks()
+   end
+  end
+end)
+
+addcmd('Sprintspeed', 'Sets your sprint speed', {},
+ function(args)
+  local SS = tonumber(args[1])
+    if args[1] then
+        if SS == "" then
+            N("Invalid Input", 5)
+        end
+      SprintSpeed = SS
+      else
+         N("No Arguments silly!", 5)
+   end
+end)
+
+addcmd('Ws', 'Sets your sprint speed', {},
+ function(args)
+     local SS = tonumber(args[1])
+        if args[1] then
+         if SS == "" then
+            N("Invalid Input", 5)
+         end
+         DefaultSpeed = SS
+         Character().Humanoid.WalkSpeed = SS
+         else
+        N("No arguments silly!")
+    end
+end)
+
+addcmd('Fov', 'Sets your sprint speed', {},
+ function(args)
+     local SS = tonumber(args[1])
+        if args[1] then
+         if SS == "" then
+            N("Invalid Input", 5)
+         end
+         workspace.Camera.FieldOfView = SS
+         else
+        N("No arguments silly!")
+    end
+end)
+
+addcmd('rejoin', 'Rejoins server', {},
+  function(args)
+ game:GetService("TeleportService"):Teleport(game.PlaceId)
+end)
+
+addcmd('To', 'Teleports to a player', {},
+ function(args)
+  if not args[1] then 
+      N('No player argument found!', 3) 
+  else
+      local FindPlayer = getPlayer(args[1])
+     for i, V in pairs(FindPlayer) do
+    local Part = gPlayers[V].Character.Head.CFrame
+    game:GetService("TweenService"):Create(Character().HumanoidRootPart,TweenInfo.new(3.2,Enum.EasingStyle.Sine,Enum.EasingDirection.InOut),{CFrame = Part}):Play()
+     end
+   end
+ if args[1] == "Place" or args[1] == "place" then
+     if args[2] == "Bank" or args[2] == "bank" then
+        local Pos = CFrame.new(Vector3.new(-268.920776, 4.87570047, 134.51683))
+        game:GetService("TweenService"):Create(Character().HumanoidRootPart,TweenInfo.new(3.2,Enum.EasingStyle.Sine,Enum.EasingDirection.InOut),{CFrame = Pos}):Play()
+     elseif args[2] == "Pit" or args[2] == "pit" then
+        local Pos = CFrame.new(Vector3.new(-214.968643, 3.92999983, -116.497337))
+        game:GetService("TweenService"):Create(Character().HumanoidRootPart,TweenInfo.new(3.2,Enum.EasingStyle.Sine,Enum.EasingDirection.InOut),{CFrame = Pos}):Play()
+     elseif args[2] == "Prison" or args[2] == "prison" then
+        local Pos = CFrame.new(Vector3.new(-975.658386, 3.19985485, -79.1075974))
+        game:GetService("TweenService"):Create(Character().HumanoidRootPart,TweenInfo.new(3.2,Enum.EasingStyle.Sine,Enum.EasingDirection.InOut),{CFrame = Pos}):Play()
+    end
+  end
+end)
+
+addcmd('Noclip', 'Noclips you', {},
+ function(args)
+    if Noclip then
+     Noclip = false
+     N('Noclip has been set: false', 3)
+    else
+    if not Noclip then
+        Noclip = true
+        N('Noclip has been set: true', 3)
+    end
+    end
+end)
+
+addcmd('clip', 'Noclips you', {},
+ function(args)
+  Noclip = false
+   N('Noclip has been set: false', 3)
+end)
+
+addcmd('Commands', 'Shows the command list', {},
+  function(args)
+   GetCommands()
+end)
+
+addcmd('Cmds', 'Shows the command list', {},
+  function(args)
+   GetCommands()
+end)  
+        
+SprintSpeed = 25
+DefaultSpeed = 16
+
+function LoadSprint()
+local Player = game.Players.LocalPlayer
+local Character = Player.Character
+local InputService = game:GetService("UserInputService")
+
+InputService.InputBegan:Connect(function(key) 
+ if key.KeyCode == Enum.KeyCode.LeftShift then
+  Character.Humanoid.WalkSpeed = SprintSpeed
+ end 
+end)
+
+InputService.InputEnded:Connect(function(key)
+ if key.KeyCode == Enum.KeyCode.LeftShift then
+  Character.Humanoid.WalkSpeed = DefaultSpeed
+ end
+end)
+end
+
+function LoadCrouch()
+local Player = game.Players.LocalPlayer
+local Character = Player.Character
+local InputService = game:GetService("UserInputService")
+local CrouchSpeed = 5
+
+InputService.InputBegan:Connect(function(key) 
+ if key.KeyCode == Enum.KeyCode.LeftControl then
+  Character.Humanoid.WalkSpeed = CrouchSpeed
+ end 
+end)
+
+InputService.InputEnded:Connect(function(key)
+ if key.KeyCode == Enum.KeyCode.LeftControl then
+  Character.Humanoid.WalkSpeed = DefaultSpeed
+ end
+end)
+end
+
+function SetSpeed()
+    game.Players.LocalPlayer.Character:WaitForChild("Humanoid").WalkSpeed = DefaultSpeed
+end
+
+LoadCrouch()
+LoadSprint()
+SetSpeed()
+game.Players.LocalPlayer.CharacterAdded:Connect(LoadCrouch)
+game.Players.LocalPlayer.CharacterAdded:Connect(LoadSprint)
+game.Players.LocalPlayer.CharacterAdded:Connect(SetSpeed)
+
+if _G.AutoNoclip then
+    Noclip = true
+end
+
+RunService:Connect(function()
+RunWait:Wait()
+if Noclip then
+local Character = Character()
+local GetCharacterChildren = Character:GetDescendants()
+ for i = 1,#GetCharacterChildren do
+   local CharacterChild = GetCharacterChildren[i]
+     if CharacterChild:IsA("BasePart") then
+      CharacterChild.CanCollide = false
+      end
+    end
+  end
+end)
